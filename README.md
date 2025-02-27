@@ -27,7 +27,7 @@ This extension:
 
 ## Project Structure
 
-This project is organized to support both Chrome and Firefox browsers with shared code:
+This project is organized to support both Chrome and Firefox browsers with a webpack-based build system:
 
 ```
 holded-time-tracker/
@@ -43,10 +43,15 @@ holded-time-tracker/
 │       ├── manifest.json    # Firefox manifest (V2)
 │       ├── background.js    # Firefox background script
 │       └── content.js       # Firefox content script
+├── build/                   # Build scripts
+│   ├── build-chrome.js      # Script to build Chrome extension
+│   └── build-firefox.js     # Script to build Firefox extension
+├── scripts/                 # Packaging scripts
+│   ├── package-chrome.js    # Script to package Chrome extension
+│   └── package-firefox.js   # Script to package Firefox extension
 ├── dist/                    # Build output
 │   ├── chrome/              # Chrome build output
 │   └── firefox/             # Firefox build output
-├── scripts/                 # Build and packaging scripts
 ├── webpack.chrome.config.js # Webpack config for Chrome
 ├── webpack.firefox.config.js # Webpack config for Firefox
 └── README.md                # Project documentation
