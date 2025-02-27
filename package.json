@@ -10,6 +10,7 @@
     "package": "npm run package:chrome && npm run package:firefox",
     "package:chrome": "node scripts/package-chrome.js",
     "package:firefox": "node scripts/package-firefox.js",
+    "version": "node scripts/update-version.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

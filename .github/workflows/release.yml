@@ -1,0 +1,63 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Run when tag matches v*, e.g. v1.0, v20.15.10
+
+jobs:
+  build:
+    name: Build and Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build extensions
+        run: npm run build
+
+      - name: Package extensions
+        run: npm run package
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.get_version.outputs.VERSION }}
+          draft: false
+          prerelease: false
+          files: |
+            dist/holded-time-tracker-chrome.zip
+            dist/holded-time-tracker-firefox.zip
+          body: |
+            # Holded Time Tracker v${{ steps.get_version.outputs.VERSION }}
+            
+            This release contains the latest version of the Holded Time Tracker browser extension.
+            
+            ## Installation
+            
+            ### Chrome
+            - Download the `holded-time-tracker-chrome.zip` file
+            - Unzip it to a folder
+            - Open Chrome and go to `chrome://extensions/`
+            - Enable "Developer mode"
+            - Click "Load unpacked" and select the unzipped folder
+            
+            ### Firefox
+            - Download the `holded-time-tracker-firefox.zip` file
+            - Open Firefox and go to `about:addons`
+            - Click the gear icon and select "Install Add-on From File..."
+            - Select the downloaded zip file

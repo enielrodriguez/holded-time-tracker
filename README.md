@@ -157,6 +157,52 @@ The extension:
 - Browser-specific content scripts: Import and use the shared logic
 - Background scripts: Handle extension lifecycle events
 
+### Versioning
+
+This project uses [Semantic Versioning](https://semver.org/) (SemVer) for all version numbers. When releasing a new version, you need to update the version number in three files:
+
+- `package.json`
+- `src/chrome/manifest.json`
+- `src/firefox/manifest.json`
+
+To simplify this process, use the provided version update script:
+
+```bash
+# Update to version 1.1.0
+npm run version 1.1.0
+```
+
+This script will:
+
+1. Update all three files with the full semantic version (e.g., 1.1.0)
+2. Validate that the version follows the SemVer format (X.Y.Z)
+3. Remind you to create a git tag for the release
+
+Following semantic versioning principles:
+
+- MAJOR version (X) for incompatible API changes
+- MINOR version (Y) for new functionality in a backward compatible manner
+- PATCH version (Z) for backward compatible bug fixes
+
+### Automated Releases
+
+This project uses GitHub Actions to automate the release process:
+
+1. Create and push a new tag with the version number:
+
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+
+2. GitHub Actions will automatically:
+   - Build both Chrome and Firefox extensions
+   - Package them into zip files
+   - Create a GitHub release with the zip files attached
+   - Add installation instructions to the release notes
+
+The workflow is defined in `.github/workflows/release.yml`.
+
 ## Troubleshooting
 
 If the extension stops working:
