@@ -122,7 +122,7 @@ The packaged zip files will be available at:
 
 ### Firefox Installation
 
-1. Open Firefox and go to `about:debugging#/runtime/this-firefox`
+1. Open Firefox (version 58.0 or later) and go to `about:debugging#/runtime/this-firefox`
 2. Click "Load Temporary Add-on..."
 3. Navigate to the `dist/firefox` directory and select the `manifest.json` file
 4. The extension will automatically start working when you visit Holded
