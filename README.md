@@ -132,11 +132,11 @@ The packaged zip files will be available at:
 4. Select the `dist/chrome` directory
 5. The extension will automatically start working when you visit Holded
 
-### Firefox Installation from Add-ons
+### Firefox Installation
 
 1. https://addons.mozilla.org/en-US/firefox/addon/holded-time-tracker/
 
-### Firefox Installation (temporary)
+#### Firefox Installation (temporary)
 
 1. Open Firefox (version 58.0 or later) and go to `about:debugging#/runtime/this-firefox`
 2. Click "Load Temporary Add-on..."
