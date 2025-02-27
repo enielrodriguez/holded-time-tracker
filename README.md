@@ -1,13 +1,13 @@
 # Holded Time Tracker Extension
 
-This browser extension solves a critical limitation in Holded's time tracking interface: Holded does not add the currently running timer to your total worked time until you manually stop the timer. This extension automatically adds the current timer value to your total worked time and updates it every minute.
+This browser extension automatically adds the current timer value to your total worked time and updates it every minute.
 
 ## The Problem
 
 In Holded's time tracking:
 - The running timer is not included in your total worked time
 - You only see the accumulated time from previously stopped timers
-- To get an accurate total, you must manually stop the timer
+- To get an accurate total, you must stop the timer
 
 ## The Solution
 
