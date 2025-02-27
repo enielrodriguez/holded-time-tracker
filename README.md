@@ -2,6 +2,18 @@
 
 This browser extension automatically adds the current timer value to your total worked time and updates it every minute.
 
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Building the Extensions](#building-the-extensions)
+- [Installation](#installation)
+  - [Chrome Installation](#chrome-installation)
+  - [Firefox Installation](#firefox-installation)
+- [How it Works](#how-it-works)
+- [Development](#development)
+- [License](#license)
+- [Troubleshooting](#troubleshooting)
+
 ## The Problem
 
 In Holded's time tracking:
