@@ -5,6 +5,7 @@ This browser extension automatically adds the current timer value to your total 
 ## The Problem
 
 In Holded's time tracking:
+
 - The running timer is not included in your total worked time
 - You only see the accumulated time from previously stopped timers
 - To get an accurate total, you must stop the timer
@@ -12,6 +13,7 @@ In Holded's time tracking:
 ## The Solution
 
 This extension:
+
 - Automatically adds the current timer value to your total worked time
 - Updates the total every minute as the timer runs
 - Works silently in the background without requiring interaction
@@ -29,7 +31,7 @@ This extension:
 
 This project is organized to support both Chrome and Firefox browsers with a webpack-based build system:
 
-```
+```plaintext
 holded-time-tracker/
 ├── src/                     # Source code
 │   ├── common/              # Shared code between both extensions
@@ -64,10 +66,9 @@ holded-time-tracker/
 - Node.js (v14 or later)
 - npm or yarn
 
-### Installation
+### Install dependencies
 
 ```bash
-# Install dependencies
 npm install
 ```
 
