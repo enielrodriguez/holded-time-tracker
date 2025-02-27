@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Holded Time Tracker",
+  "version": "1.0",
+  "description": "Solves Holded's limitation by automatically adding the current timer value to your total worked time and updating it every minute",
+  "permissions": [
+    "activeTab", 
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.holded.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.holded.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
